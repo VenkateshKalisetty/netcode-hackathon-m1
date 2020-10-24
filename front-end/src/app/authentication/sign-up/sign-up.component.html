@@ -1,0 +1,60 @@
+<mat-card>
+    <mat-card-title>Sign Up</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <p>
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              placeholder="Username *"
+              formControlName="userName"
+            />
+            <mat-error *ngIf="form.get('userName').hasError('required')">Required</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+              <input
+                type="text"
+                matInput
+                placeholder="Email *"
+                formControlName="email"
+              />
+              <mat-error *ngIf="form.get('email').hasError('required')">Required</mat-error>
+              <mat-error *ngIf="form.get('email').hasError('emai')">Invalid Email</mat-error>
+            </mat-form-field>
+          </p>
+
+          <p>
+            <mat-form-field>
+              <mat-label>User Access Level</mat-label>
+              <mat-select formControlName="accessLevel">
+                <mat-option value="user">User</mat-option>
+                <mat-option value="admin">Admin</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p>
+
+        <p>
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              placeholder="Password *"
+              formControlName="password"
+            />
+            <mat-error *ngIf="form.get('password').hasError('required')">Required</mat-error>
+            <mat-error *ngIf="form.get('password').hasError('minlength')">Should contains atleast 8 characters</mat-error>
+            <mat-error *ngIf="form.get('password').hasError('pattern')">Should contains atleast 1 letter, 1 number and 1 special character</mat-error>
+          </mat-form-field>
+        </p>
+  
+        <div class="button">
+            <button mat-button (click)="router.navigate(['signin'])">Signin</button>
+            <button type="submit" mat-raised-button>Signup</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

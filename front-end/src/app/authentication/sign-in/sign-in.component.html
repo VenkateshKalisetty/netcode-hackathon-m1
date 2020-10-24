@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-title>Sign In</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Username *"
+            formControlName="userName"
+          />
+          <mat-error *ngIf="form.get('userName').hasError('required')"
+            >Required</mat-error
+          >
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input
+            type="password"
+            matInput
+            placeholder="Password *"
+            formControlName="password"
+          />
+          <mat-error *ngIf="form.get('password').hasError('required')"
+            >Required</mat-error
+          >
+        </mat-form-field>
+      </p>
+
+      <div class="button">
+        <button mat-button (click)="router.navigate(['signup'])">Signup</button>
+        <button type="submit" mat-raised-button>Signin</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
