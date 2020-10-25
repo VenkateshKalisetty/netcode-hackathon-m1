@@ -15,6 +15,9 @@ app.use(express.static(path.join(__dirname, './front-end/dist/wd-m1-ui/')));
 
 app.use('/api/auth', generateToken);
 app.use('/api/user', userRouter);
+app.use('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, './front-end/dist/wd-m1-ui/index.html'));
+})
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

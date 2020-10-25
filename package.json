@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start:dev": "nodemon --ignore 'front-end/' server.js",
+    "build:prod:run": "cd front-end && npm run build && cd.. && node server.js",
     "start": "npm install && cd front-end && npm install && npm run build && cd .. && node server.js"
   },
   "dependencies": {
