@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:dev": "ng server --watch",
     "build": "ng build --prod"
   },
   "private": true,

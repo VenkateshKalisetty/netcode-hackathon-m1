@@ -17,7 +17,7 @@ const authAdmin = (req, res, next) => {
     if (isAdmin)
         next();
     else
-        Response.accessForbidden(res, { msg: "Your access for this resource is forbidden." });
+        Response.accessForbidden(res, { msg: "Your access for this resource is forbidden!" });
 }
 
 const generateToken = async (req, res) => {
@@ -58,6 +58,6 @@ const authenticateRequest = (req, res, next) => {
 
 module.exports = {
     authAdmin,
-    authenticateUser: generateToken,
+    generateToken,
     authenticateRequest
 };

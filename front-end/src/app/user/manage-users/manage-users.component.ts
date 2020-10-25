@@ -50,6 +50,11 @@ export class ManageUsersComponent implements OnInit {
         const index = this.dataSource.findIndex((v) => v.id === user.id);
         this.dataSource[index].accessLevel = 'admin';
         this.dataSource = this.dataSource.slice();
+        this.snackBar.open('User access level upgraded.', '', {
+          duration: 5000,
+          horizontalPosition: 'end',
+          verticalPosition: 'bottom'
+        });
       },
       (err) => {
         console.log(err);

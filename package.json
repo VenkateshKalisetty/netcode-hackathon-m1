@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start:dev": "node server.js",
+    "start:dev": "nodemon --ignore 'front-end/' server.js",
     "start": "npm install && cd front-end && npm install && npm run build && cd .. && node server.js"
   },
   "dependencies": {

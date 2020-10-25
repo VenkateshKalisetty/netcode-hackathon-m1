@@ -35,6 +35,11 @@ export class SignUpComponent implements OnInit {
     if (this.form.valid) {
       this.authService.signup(this.form.value).subscribe(
         (res) => {
+          this.snackBar.open('User created.', '', {
+            duration: 5000,
+            horizontalPosition: 'end',
+            verticalPosition: 'bottom'
+          });
           this.router.navigate(['signin']);
         },
         (err) => {
